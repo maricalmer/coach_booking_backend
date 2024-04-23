@@ -14,8 +14,8 @@ task import_data: :environment do
     (period_start..period_end).each do |date|
       next unless date.strftime('%A') == row['Day of Week']
 
-      start_time = TimeConverter.adjust_time_by_gmt_offset(date, row['Available at'], row['Timezone'])
-      end_time = TimeConverter.adjust_time_by_gmt_offset(date, row['Available until'], row['Timezone'])
+      start_time = TimeConverter.set_to_central_gmt(date, row['Available at'], row['Timezone'])
+      end_time = TimeConverter.set_to_central_gmt(date, row['Available until'], row['Timezone'])
 
       create_30_min_slots(coach, start_time, end_time)
     end
