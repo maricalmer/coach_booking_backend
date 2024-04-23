@@ -55,7 +55,12 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
+  config.include FactoryBot::Syntax::Methods
+  config.render_views = false
   config.infer_spec_type_from_file_location!
+  config.before(:each, type: :controller) do
+    request.env['HTTP_ACCEPT'] = 'application/json'
+  end
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!

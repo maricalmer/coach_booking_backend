@@ -12,7 +12,7 @@ RSpec.describe Slot, type: :model do
   end
 
   it 'is valid with all attributes provided' do
-    coach = Coach.create(name: 'John Doe', timezone: 'UTC')  # Assuming the Coach model is properly set up
+    coach = Coach.create(name: 'John Doe', timezone: 'UTC')
     slot = Slot.new(start_time: Time.now, end_time: Time.now + 1.hour, coach: coach)
     expect(slot).to be_valid
   end
