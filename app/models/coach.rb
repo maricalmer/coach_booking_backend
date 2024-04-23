@@ -1,5 +1,5 @@
 class Coach < ApplicationRecord
-  class Coach < ApplicationRecord
-    has_many :slots, dependent: :destroy
-  end
+  has_many :slots, dependent: :destroy
+  validates :name, :timezone, presence: true
 end
+
