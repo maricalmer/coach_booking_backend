@@ -1,24 +1,24 @@
-# README
+#Make sure to have the 3.1.2 ruby version
+```sh
+rbenv install 3.1.2
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Install gems
+```sh
+bundle install
+```
 
-Things you may want to cover:
+#Create DB
+```sh
+rails db:migrate
+```
 
-* Ruby version
+#Parse CSV
+```sh
+rails import_data
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#Run server
+```sh
+rails s
+```
